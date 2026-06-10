@@ -1,0 +1,64 @@
+name: ci
+
+permissions: {}
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch: {}
+  merge_group: {}
+
+  # cancel in-progress runs on new commits to same PR (gitub.event.number)
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.sha }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+      - run: npm i -g corepack@latest && corepack enable
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 25
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: install deps
+        run: pnpm install --frozen-lockfile
+
+      - name: typecheck
+        run: pnpm test:typecheck
+
+      - name: lint
+        run: pnpm lint
+
+      - name: format check
+        run: pnpm fmt:check
+
+      # - name: test
+      #   run: pnpm test
+      #   timeout-minutes: 10
+
+      # - name: cache playwright browsers
+      #   id: cache-playwright
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: /home/runner/.cache/ms-playwright
+      #     key: ${{ runner.os }}-playwright-browsers-${{ hashFiles('pnpm-lock.yaml') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-playwright-browsers-
+
+      # - name: install playwright browsers
+      #   if: steps.cache-playwright.outputs.cache-hit != 'true'
+      #   run: pnpm exec playwright install --with-deps chromium
+
+      # - name: e2e test
+      #   run: pnpm test:e2e
+      #   timeout-minutes: 15

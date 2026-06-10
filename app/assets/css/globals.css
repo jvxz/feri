@@ -1,0 +1,39 @@
+/* @import '@unocss/reset/tailwind-v4.css'; */
+
+:root {
+  --shift-hover: -0.018;
+  --shift-press: -0.03;
+}
+
+@utility scrollbar-fancy {
+  scrollbar-color: var(--border) transparent;
+}
+
+* {
+  @apply border-border outline-ring/50 ring-ring/75 underline-offset-4;
+  min-height: 0;
+  min-width: 0;
+}
+
+html {
+  scrollbar-color: var(--muted-foreground) transparent;
+}
+
+body {
+  @apply bg-background text-foreground font-sans text-pretty min-h-screen underline-offset-2 font-normal tracking-normal select-none;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0.0125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes skeleton {
+  0% {
+    translate: -100% 0;
+  }
+
+  100% {
+    translate: 300% 0;
+  }
+}
