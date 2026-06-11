@@ -94,6 +94,8 @@ export default defineConfig({
       danger: 'var(--danger)',
       'danger-foreground': 'var(--danger-foreground)',
       foreground: 'var(--foreground)',
+      'ghost-hover': 'oklch(1 0 0 / var(--overlay-hover))',
+      'ghost-press': 'oklch(1 0 0 / var(--overlay-press))',
       hover: 'var(--hover)',
       input: 'var(--input)',
       muted: 'var(--muted)',
@@ -119,6 +121,9 @@ export default defineConfig({
     font: {
       mono: 'Paper Mono',
       sans: 'Pretendard',
+    },
+    radius: {
+      DEFAULT: 'var(--radius)',
     },
     shadow: {
       DEFAULT: [`0 1px 3px 0 #00000035`, `0 1px 2px -1px #00000035`],

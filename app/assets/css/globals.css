@@ -1,8 +1,15 @@
-/* @import '@unocss/reset/tailwind-v4.css'; */
-
 :root {
   --shift-hover: -0.018;
   --shift-press: -0.03;
+
+  --overlay-hover: 4%;
+  --overlay-press: 6%;
+
+  --radius: 0.4rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
 @utility scrollbar-fancy {
