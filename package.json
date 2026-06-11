@@ -21,6 +21,8 @@
     "nuxt": "^4.4.8",
     "nuxt-security": "2.6.0",
     "reka-ui": "^2.9.9",
+    "tailwind-merge": "^3.6.0",
+    "tailwind-variants": "^3.2.2",
     "vue": "^3.6.0-beta.14",
     "vue-router": "^5.1.0"
   },

@@ -29,7 +29,7 @@ export default defineNuxtConfig({
 
   imports: {
     dirs: ['~/utils/**/*.ts', '~/config/**/*.ts', '~/composables/**/*.ts', '~/constants/**/*.ts', '~~/shared/**/*.ts'],
-    presets: [{ ignore: ['isEqual'], package: 'es-toolkit' }],
+    presets: [{ ignore: ['isEqual'], package: 'es-toolkit' }, { package: 'tailwind-variants' }],
   },
 
   modules: ['@nuxt/fonts', 'reka-ui/nuxt', '@unocss/nuxt', 'nuxt-security', '@nuxtjs/color-mode', '@vueuse/nuxt'],
