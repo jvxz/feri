@@ -33,4 +33,20 @@ export default defineNuxtConfig({
   },
 
   modules: ['@nuxt/fonts', 'reka-ui/nuxt', '@unocss/nuxt', 'nuxt-security', '@nuxtjs/color-mode', '@vueuse/nuxt'],
+
+  nitro: {
+    imports: {
+      dirs: ['./server/db'],
+    },
+  },
+
+  runtimeConfig: {
+    DATABASE_URL: process.env.NUXT_DATABASE_URL,
+  },
+
+  // typescript: {
+  //   tsConfig: {
+  //     include: ['./drizzle.config.ts'],
+  //   },
+  // },
 })
