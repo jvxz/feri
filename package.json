@@ -4,13 +4,15 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
+    "db:push": "drizzle-kit push",
     "dev": "nuxt dev",
     "fmt": "oxfmt .",
     "generate": "nuxt generate",
     "lint": "pnpm oxlint && eslint ",
     "lint:fix": "pnpm oxlint --fix && eslint --fix",
     "postinstall": "nuxt prepare",
-    "preview": "pnpm run build && nuxt preview"
+    "preview": "pnpm run build && nuxt preview",
+    "test:typecheck": "nuxt typecheck"
   },
   "dependencies": {
     "@nuxt/fonts": "0.14.0",
