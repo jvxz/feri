@@ -1,4 +1,9 @@
 allowBuilds:
   '@parcel/watcher': true
   esbuild: true
-  vue-demi: set this to true or false
+  vue-demi: true
+minimumReleaseAgeExclude:
+  - es-toolkit@1.50.0
+  - '@e18e/eslint-plugin@0.6.0'
+overrides:
+  'typescript': npm:typescript-native-bridge@6.0.3-bridge.6.tsgo.7.0.2
