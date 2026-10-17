@@ -33,7 +33,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^9.2.0",
     "@e18e/eslint-plugin": "^0.6.0",
-    "@nuxt/kit": "^4.5.0",
+    "@nuxt/kit": "4.5.0",
     "@types/node": "^26.1.1",
     "@types/pg": "^8.20.0",
     "drizzle-kit": "1.0.0-rc.4-ca0f029",
